@@ -72,7 +72,18 @@ layout: null
         </div>
       </section>
 
-      <!-- CONTACT_SECTION -->
+      <section class="section reveal" id="contact">
+        <h2 class="section-title">Contact</h2>
+        <p class="contact-blurb">
+          Thanks for stopping by — I'm always up for a conversation about
+          software, design, or anything in between. Reach me anywhere below.
+        </p>
+        <div class="contact-links">
+          {% for social in site.data.site.socials %}
+            <a class="btn btn-ghost" href="{{ social.url }}">{{ social.label }}</a>
+          {% endfor %}
+        </div>
+      </section>
     </div>
   </main>
 
