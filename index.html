@@ -46,7 +46,31 @@ layout: null
         <div class="prose">{{ site.data.site.about | markdownify }}</div>
       </section>
 
-      <!-- PROJECTS_SECTION -->
+      <section class="section reveal" id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="project-grid">
+          {% for project in site.data.projects %}
+            {% assign accent_key = forloop.index0 | modulo: 3 %}
+            {% case accent_key %}
+              {% when 0 %}{% assign accent_var = "orange" %}
+              {% when 1 %}{% assign accent_var = "blue" %}
+              {% else %}{% assign accent_var = "green" %}
+            {% endcase %}
+            <a class="project-card reveal accent-{{ accent_var }}"
+               style="transition-delay: {{ forloop.index0 | times: 60 }}ms"
+               href="{{ project.url }}" target="_blank" rel="noopener">
+              <div class="project-card-top">
+                <span class="project-dot" aria-hidden="true"></span>
+                <h3 class="project-title">{{ project.title }}</h3>
+              </div>
+              <p class="project-description">{{ project.description }}</p>
+              <ul class="tag-list">
+                {% for tag in project.tags %}<li class="tag">{{ tag }}</li>{% endfor %}
+              </ul>
+            </a>
+          {% endfor %}
+        </div>
+      </section>
 
       <!-- CONTACT_SECTION -->
     </div>

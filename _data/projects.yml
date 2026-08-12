@@ -1,0 +1,19 @@
+# ── EDIT ME from the GitHub web UI ─────────────────────────────
+# Each item below becomes one card in the Projects section.
+# Replace the three samples with your own projects.
+# Rules: 2-space indent, quote values containing spaces, https:// URLs.
+
+- title: "Sample Project One"
+  description: "One or two sentences: what it does, the problem it solves, and what you learned. Replace me."
+  url: "https://github.com/kyrulamri"
+  tags: ["TypeScript", "Web"]
+
+- title: "Sample Project Two"
+  description: "One or two sentences about this project. Replace me."
+  url: "https://github.com/kyrulamri"
+  tags: ["Python", "CLI"]
+
+- title: "Sample Project Three"
+  description: "One or two sentences about this project. Replace me."
+  url: "https://github.com/kyrulamri"
+  tags: ["Design", "Accessibility"]
