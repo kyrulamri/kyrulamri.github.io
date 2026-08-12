@@ -1,0 +1,19 @@
+# Site configuration for kyrulamri.github.io
+# GitHub Pages builds this site automatically on every push to `main`.
+# NOTE: We intentionally use NO theme — the design is fully custom in
+# assets/css/main.css. Do not add a `theme:` or `remote_theme:` line.
+
+theme: null
+
+title: kyrulamri
+description: Personal site of kyrulamri — software and design with an Anthropic-inspired aesthetic.
+url: "https://kyrulamri.github.io"
+baseurl: ""
+
+# Keep source/readme files out of the published _site/
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - docs
+  - vendor
