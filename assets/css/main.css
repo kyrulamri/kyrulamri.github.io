@@ -260,3 +260,15 @@ img { max-width: 100%; display: block; }
 /* ---------- Footer ---------- */
 .site-footer { padding: 2.25rem 0 3rem; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.9rem; }
 .site-footer .container { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem; }
+
+/* ---------- Scroll reveal ---------- */
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.6s var(--ease), transform 0.6s var(--ease); }
+.reveal.is-visible { opacity: 1; transform: none; }
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hero > * { animation: none; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .btn:hover, .project-card:hover { transform: none; }
+}
