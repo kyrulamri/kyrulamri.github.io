@@ -14,6 +14,16 @@ colors:
   hairline: "#dcd9cd"
   charcoal-surface: "#1e1d1c"
 typography:
+  scale:
+    tag: "0.72rem"
+    toggle: "0.85rem"
+    nav: "0.9rem"
+    button: "0.95rem"
+    description: "0.98rem"
+    mobile-nav: "1rem"
+    brand: "1.05rem"
+    tagline-min: "1.2rem"
+    tagline-max: "1.6rem"
   display:
     fontFamily: "Poppins, Arial, sans-serif"
     fontSize: "clamp(2.75rem, 7vw, 4.75rem)"

@@ -1,6 +1,9 @@
 (function () {
   'use strict';
 
+  // JS is alive — unlock progressive-enhancement states
+  document.documentElement.classList.remove('no-js');
+
   // Mobile nav toggle
   var toggle = document.querySelector('.nav-toggle');
   var menu = document.querySelector('.nav-menu');

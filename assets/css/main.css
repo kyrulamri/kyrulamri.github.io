@@ -74,7 +74,7 @@ img { max-width: 100%; display: block; }
 
 ::selection { background: var(--accent-orange); color: var(--dark); }
 
-:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 2px; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; } /* outline follows each element's border-radius natively */
 
 .container {
   width: 100%;
@@ -117,6 +117,7 @@ img { max-width: 100%; display: block; }
 .btn:hover { transform: translateY(-2px); }
 .btn-primary { background: var(--accent-orange); color: var(--dark); box-shadow: var(--shadow-sm); }
 .btn-primary:hover { box-shadow: var(--shadow-md); }
+.btn-primary:focus-visible { outline-color: var(--dark); } /* ink ring stays visible on the Clay fill */
 .btn-ghost { background: transparent; color: var(--text); border: 1.5px solid var(--border); }
 .btn-ghost:hover { background: var(--hover-surface); border-color: transparent; }
 
@@ -155,7 +156,7 @@ img { max-width: 100%; display: block; }
   color: var(--accent-ink);
   margin-bottom: 1.25rem;
 }
-.hero-name { font-size: clamp(2.75rem, 7vw, 4.75rem); font-weight: 600; letter-spacing: -0.03em; }
+.hero-name { font-size: clamp(2.75rem, 7vw, 4.75rem); font-weight: 600; letter-spacing: -0.03em; text-wrap: balance; }
 .hero-tagline { margin-top: 1.5rem; font-size: clamp(1.2rem, 2.6vw, 1.6rem); line-height: 1.5; color: var(--text-muted); }
 .hero-actions { margin-top: 2.5rem; display: flex; flex-wrap: wrap; gap: 1rem; }
 
@@ -210,6 +211,7 @@ img { max-width: 100%; display: block; }
   gap: 1rem;
   font-size: clamp(1.5rem, 3vw, 2rem);
   letter-spacing: -0.02em;
+  text-wrap: balance;
 }
 .section-title::after { content: ""; flex: 1; height: 1px; background: var(--border); }
 
@@ -235,6 +237,7 @@ img { max-width: 100%; display: block; }
   transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), border-color 0.25s var(--ease), opacity 0.6s var(--ease);
 }
 .project-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--border); }
+.project-card:focus-visible { outline-color: var(--text); } /* ink ring stays visible on the Wool surface */
 .project-card-top { display: flex; align-items: center; gap: 0.75rem; }
 .project-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--card-accent, var(--accent-orange)); flex: none; }
 .project-title { font-size: 1.15rem; letter-spacing: -0.01em; }
@@ -270,8 +273,12 @@ img { max-width: 100%; display: block; }
 .site-footer .container { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem; }
 
 /* ---------- Scroll reveal ---------- */
-.reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.6s var(--ease), transform 0.6s var(--ease); }
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.6s var(--ease) var(--reveal-delay, 0ms), transform 0.6s var(--ease) var(--reveal-delay, 0ms); }
 .reveal.is-visible { opacity: 1; transform: none; }
+/* Cards keep their snappy state transitions; the stagger delay applies only to the reveal */
+.project-card.reveal { transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), border-color 0.25s var(--ease), opacity 0.6s var(--ease) var(--reveal-delay, 0ms); }
+/* No-JS fallback: content must never be hidden if the script fails to load */
+.no-js .reveal { opacity: 1; transform: none; transition: none; }
 
 /* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {

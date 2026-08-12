@@ -3,7 +3,7 @@ title: kyrulamri
 layout: null
 ---
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -73,7 +73,7 @@ layout: null
               {% else %}{% assign accent_var = "green" %}
             {% endcase %}
             <a class="project-card reveal accent-{{ accent_var }}"
-               style="transition-delay: {{ forloop.index0 | times: 60 }}ms"
+               style="--reveal-delay: {{ forloop.index0 | times: 60 }}ms"
                href="{{ project.url }}" target="_blank" rel="noopener">
               <div class="project-card-top">
                 <span class="project-dot" aria-hidden="true"></span>
