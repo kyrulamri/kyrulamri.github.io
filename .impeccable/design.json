@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-13T00:00:00.000Z",
+  "title": "Design System: kyrulamri.github.io",
+  "extensions": {
+    "colorMeta": {
+      "clay": { "role": "primary", "displayName": "Clay", "canonical": "#d97757", "tonalRamp": ["#3e1a0e", "#6e2e19", "#9d4224", "#cd552e", "#da7b5c", "#e5a18b", "#f0c8bb", "#faeeea"] },
+      "chambray": { "role": "secondary", "displayName": "Chambray", "canonical": "#6a9bcc", "tonalRamp": ["#142639", "#224364", "#316190", "#407ebb", "#6a9bcc", "#95b8db", "#c1d5ea", "#ecf2f8"] },
+      "moss": { "role": "tertiary", "displayName": "Moss", "canonical": "#788c5d", "tonalRamp": ["#272e1f", "#455136", "#63744d", "#819764", "#9eaf87", "#bac6aa", "#d6decd", "#f3f5f0"] },
+      "cream-paper": { "role": "neutral", "displayName": "Cream Paper", "canonical": "#faf9f5", "tonalRamp": ["#332e1a", "#5a512d", "#817440", "#a89754", "#bcaf79", "#d0c6a0", "#e3ddc7", "#f7f5ee"] },
+      "book-cloth": { "role": "neutral", "displayName": "Book Cloth", "canonical": "#141413", "tonalRamp": ["#272725", "#454542", "#63635e", "#81817a", "#9d9d98", "#babab6", "#d6d6d4", "#f3f3f2"] },
+      "wool": { "role": "neutral", "displayName": "Wool", "canonical": "#e8e6dc", "tonalRamp": ["#2e2c1e", "#514d35", "#756e4d", "#988f64", "#b0a986", "#c7c2a9", "#dedbcc", "#f5f4f0"] },
+      "pewter": { "role": "neutral", "displayName": "Pewter", "canonical": "#b0aea5", "tonalRamp": ["#292824", "#48463f", "#67655a", "#868375", "#a19f94", "#bdbbb3", "#d8d7d2", "#f3f3f1"] },
+      "muted-ink": { "role": "neutral", "displayName": "Muted Ink", "canonical": "#5f5e57", "tonalRamp": ["#282825", "#464640", "#65645c", "#838278", "#9f9e96", "#bbbab5", "#d7d6d3", "#f3f3f2"] },
+      "terracotta-ink": { "role": "neutral", "displayName": "Terracotta Ink", "canonical": "#b04e2f", "tonalRamp": ["#3c1b10", "#6a2f1c", "#984429", "#c65835", "#d57d61", "#e1a38f", "#edc9bd", "#faeeeb"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero name only — the single largest type on the page." },
+      "headline": { "displayName": "Headline", "purpose": "Section titles, extended by a hairline rule." },
+      "title": { "displayName": "Title", "purpose": "Project card titles and the header brand mark." },
+      "body": { "displayName": "Body", "purpose": "All running prose, measured at 40rem." },
+      "label": { "displayName": "Label", "purpose": "Uppercase whisper labels: eyebrow, tags, nav links." }
+    },
+    "shadows": [
+      { "name": "rest", "value": "0 1px 2px rgba(20, 20, 19, 0.06)", "purpose": "The quiet shadow under resting primary buttons and cards." },
+      { "name": "hover", "value": "0 6px 24px rgba(20, 20, 19, 0.09)", "purpose": "The lifted shadow on hover/focus for buttons and cards." }
+    ],
+    "motion": [
+      { "name": "ease", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "Default easing for all state transitions and reveals." },
+      { "name": "button-state", "value": "0.2s", "purpose": "Hover/focus transitions on buttons and nav links." },
+      { "name": "card-state", "value": "0.25s", "purpose": "Hover transition on project cards." },
+      { "name": "theme-switch", "value": "0.3s", "purpose": "Body color/background transition when the OS color scheme changes." },
+      { "name": "reveal", "value": "0.6s", "purpose": "Scroll-reveal fade-up for sections and cards." },
+      { "name": "hero-rise", "value": "0.8s", "purpose": "Staggered hero entrance animation on load." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "720px", "purpose": "Nav collapses to a Menu toggle below this width." }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one loud action on the page — Clay fill, book-cloth ink, full pill.",
+      "html": "<button class=\"ds-btn-primary\">See my work</button>",
+      "css": ".ds-btn-primary { background: var(--accent-orange); color: var(--dark); font-family: var(--font-heading); font-size: 0.95rem; font-weight: 600; padding: 0.85rem 1.6rem; border: 0; border-radius: 999px; cursor: pointer; box-shadow: var(--shadow-sm); transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease); } .ds-btn-primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); } .ds-btn-primary:focus-visible { outline: 3px solid var(--accent-orange); outline-offset: 3px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Quiet secondary action — transparent with a hairline stroke; hover fills the surface.",
+      "html": "<button class=\"ds-btn-ghost\">Get in touch</button>",
+      "css": ".ds-btn-ghost { background: transparent; color: var(--text); font-family: var(--font-heading); font-size: 0.95rem; font-weight: 600; padding: 0.85rem 1.6rem; border: 1.5px solid var(--border); border-radius: 999px; cursor: pointer; transition: transform 0.2s var(--ease), background-color 0.2s var(--ease), border-color 0.2s var(--ease); } .ds-btn-ghost:hover { background: var(--hover-surface); border-color: transparent; transform: translateY(-2px); } .ds-btn-ghost:focus-visible { outline: 3px solid var(--accent-orange); outline-offset: 3px; }"
+    },
+    {
+      "name": "Project Tag",
+      "kind": "chip",
+      "refersTo": "tag",
+      "description": "Metadata chip — uppercase Poppins whisper, full pill, 15% accent tint behind full-contrast ink.",
+      "html": "<span class=\"ds-tag\">Accessibility</span>",
+      "css": ".ds-tag { display: inline-block; font-family: var(--font-heading); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.02em; text-transform: uppercase; color: var(--text); padding: 0.3rem 0.7rem; border: 1px solid var(--border); border-radius: 999px; background: color-mix(in srgb, var(--accent-orange) 15%, var(--canvas)); }"
+    },
+    {
+      "name": "Project Card",
+      "kind": "card",
+      "refersTo": "project-card",
+      "description": "The signature surface — 24px corner, accent dot, tinted tags; lifts on hover with a hairline edge.",
+      "html": "<a class=\"ds-card\" href=\"#\"><span class=\"ds-card-dot\" aria-hidden=\"true\"></span><h3 class=\"ds-card-title\">Project title</h3><p class=\"ds-card-desc\">One or two sentences about what it does and what you learned.</p><ul class=\"ds-card-tags\"><li>Web</li><li>TypeScript</li></ul></a>",
+      "css": ".ds-card { display: flex; flex-direction: column; gap: 1rem; padding: 1.75rem; background: var(--surface); border: 1px solid transparent; border-radius: var(--radius-lg); text-decoration: none; color: inherit; box-shadow: var(--shadow-sm); transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), border-color 0.25s var(--ease); } .ds-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--border); } .ds-card:focus-visible { outline: 3px solid var(--accent-orange); outline-offset: 3px; } .ds-card-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent-orange); flex: none; } .ds-card-title { font-family: var(--font-heading); font-size: 1.15rem; font-weight: 600; letter-spacing: -0.01em; margin: 0; } .ds-card-desc { font-family: var(--font-body); font-size: 0.98rem; line-height: 1.7; color: var(--text-muted); margin: 0; flex: 1; } .ds-card-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; margin: 0; padding: 0; } .ds-card-tags li { font-family: var(--font-heading); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.02em; text-transform: uppercase; color: var(--text); padding: 0.3rem 0.7rem; border: 1px solid var(--border); border-radius: 999px; background: color-mix(in srgb, var(--accent-orange) 15%, var(--canvas)); }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Sticky 4rem bar with translucent scrim and blur; brand mark left, links right; collapses below 720px.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-brand\" href=\"#\">kyrulamri</a><ul class=\"ds-nav-links\"><li><a href=\"#about\">About</a></li><li><a href=\"#projects\">Projects</a></li><li><a href=\"#contact\">Contact</a></li></ul></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; height: 4rem; padding: 0 clamp(1.25rem, 4vw, 2.5rem); background: rgba(250, 249, 245, 0.85); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); } .ds-brand { font-family: var(--font-heading); font-size: 1.05rem; font-weight: 600; letter-spacing: -0.01em; text-decoration: none; color: var(--text); } .ds-nav-links { display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0; } .ds-nav-links a { font-family: var(--font-heading); font-size: 0.9rem; font-weight: 500; text-decoration: none; color: var(--text-muted); transition: color 0.2s var(--ease); } .ds-nav-links a:hover { color: var(--text); } .ds-nav-links a:focus-visible { outline: 3px solid var(--accent-orange); outline-offset: 3px; }"
+    },
+    {
+      "name": "Section Title",
+      "kind": "custom",
+      "refersTo": "headline",
+      "description": "Poppins headline extended by a hairline rule that carries the eye across the page.",
+      "html": "<h2 class=\"ds-section-title\">Projects</h2>",
+      "css": ".ds-section-title { display: flex; align-items: baseline; gap: 1rem; font-family: var(--font-heading); font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 600; letter-spacing: -0.02em; line-height: 1.15; margin: 0; } .ds-section-title::after { content: \"\"; flex: 1; height: 1px; background: var(--border); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "\"The Clay Atelier\"",
+    "overview": "This is a maker's workshop with the warmth of a well-loved studio: cream-paper walls, one clay accent that appears sparingly and means it, and type set the way a book is set. The site introduces a person who codes, and it does so with the unhurried confidence of something hand-finished — crafted, bookish, quiet. Nothing shouts; the identity is carried by material and rhythm rather than decoration.\n\nThe layout breathes: a single column of prose measured at a book-like length, sections separated by hairline rules, generous air around every element. The interface recedes so the person leads. At night the same workshop turns its lights down — the palette remaps automatically to a dark canvas, and the clay accent stays warm in the dark, like a lamp left on. Density is low and editorial everywhere; there is no UI clutter, no gratuitous motion, no ornament that isn't doing identity work.",
+    "keyCharacteristics": [
+      "One loud accent (Clay) on a dominant cream canvas; rarity is the point",
+      "Bookish serif body (Lora) with geometric sans headings (Poppins) — never inverted",
+      "Flat at rest; soft shadows only as a state response; dark mode uses tonal layering",
+      "Generous corners on interactive cards (24px), fine controls smaller (8px), full pills for buttons and tags",
+      "Automatic dark mode remaps the same tokens — no toggle, no separate dark design"
+    ],
+    "rules": [
+      { "name": "The One Voice Rule", "body": "Clay is the only loud color, and it is used on a small fraction of any screen. Its rarity is the point; two Clay elements within one viewport need a reason.", "section": "colors" },
+      { "name": "The Accent Cycle Rule", "body": "Project cards cycle Clay → Chambray → Moss by list index. Accents appear as a 10px dot and a 15% tint behind tags — never as full-strength fills or text.", "section": "colors" },
+      { "name": "The Ink Discipline Rule", "body": "Accent-colored text uses Terracotta Ink on cream and Clay on dark. Full-strength accents are for fills and decoration, never for body or small text.", "section": "colors" },
+      { "name": "The Serif–Sans Rule", "body": "Headings are always Poppins, body always Lora. Never inverted, never mixed within a phrase. The formula is the brand.", "section": "typography" },
+      { "name": "The Uppercase Whisper Rule", "body": "Uppercase is reserved for tiny labels — the eyebrow, tags, and nothing else. It never appears in sentences, headings, or body copy.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "Surfaces are flat at rest. Shadows appear only as a response to state — hover, focus, elevation. If a new surface needs depth at rest, use tonal layering, not a shadow.", "section": "elevation" },
+      { "name": "The Generous Corner Rule", "body": "Interactive containers are the roundest shapes on the page (24px cards, full pills). Corners shrink as prominence falls; the smallest controls (8px) are never rounder than the cards they belong to.", "section": "shapes" }
+    ],
+    "dos": [
+      "Do start every new surface from the tokens in the frontmatter; they are normative.",
+      "Do let Cream Paper dominate; Clay earns its meaning from scarcity.",
+      "Do cycle project accents Clay → Chambray → Moss by index, as dots and 15% tints.",
+      "Do use Terracotta Ink for accent-colored text on cream and Clay for accent text on dark.",
+      "Do keep headings in Poppins and body in Lora — the pairing is binding.",
+      "Do honor automatic dark mode by remapping usage tokens, never by forking the design.",
+      "Do keep prose at 40rem measure and section rhythm at `clamp(4rem, 9vw, 7rem)`.",
+      "Do keep surfaces flat at rest and let shadows appear only on hover and focus."
+    ],
+    "donts": [
+      "Don't use full-strength Clay (or Chambray/Moss) as body or small text on cream — it fails AA (2.7:1).",
+      "Don't add a manual theme toggle; dark mode follows the OS, by design.",
+      "Don't introduce a third font family or a monospace voice.",
+      "Don't use pure white (#ffffff) or pure black (#000000) anywhere — the palette's warm near-whites and near-blacks are the brand.",
+      "Don't use shadows as ambient depth, and don't create new palette colors outside the frontmatter."
+    ]
+  }
+}
