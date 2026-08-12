@@ -1229,6 +1229,8 @@ Expected: the loop reaches `HTTP 200`, and the content grep returns a positive c
 
 Check github.com → `kyrulamri.github.io` → **Settings → Pages**. For `<user>.github.io` repos the source defaults to "Deploy from a branch → main / (root)" and is enabled automatically; if it's unset, select that option and save.
 
+**Execution note (found in practice):** a pre-existing repo deployed via a GitHub Actions workflow (`static.yml` + `.nojekyll`) leaves Pages with **no site configured or set to Actions as the source** — the classic Jekyll build from `main` is NOT active, so the live URL 404s. Fix via API: `gh api --method POST repos/<user>/<user>.github.io/pages -f build_type=legacy -f "source[branch]=main" -f "source[path]=/"` (or Settings → Pages → Source → "Deploy from a branch" → main / (root)). Also verify no `.nojekyll` survives in the published root — it disables Jekyll and would publish raw `{{ Liquid }}` tags.
+
 - [ ] **Step 5: Final acceptance**
 
 1. `https://kyrulamri.github.io/` returns 200 and shows the hero, about, three project cards, contact buttons, and footer.
