@@ -13,6 +13,8 @@ baseurl: ""
 # Keep source/readme files out of the published _site/
 exclude:
   - README.md
+  - PRODUCT.md
+  - DESIGN.md
   - Gemfile
   - Gemfile.lock
   - docs
