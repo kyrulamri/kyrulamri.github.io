@@ -51,6 +51,11 @@ top of `assets/css/main.css` — Anthropic brand colors (`#faf9f5`
 canvas, `#141413` ink, `#d97757` accent, Poppins/Lora type). Change
 the *tokens*, not the components.
 
+Dark mode is automatic: a `@media (prefers-color-scheme: dark)` block
+at the bottom of the file remaps the same tokens to Anthropic's dark
+tones (`#141413` canvas, `#faf9f5` text, `#b0aea5` muted). Visitors on
+dark-mode devices see it automatically; no toggle exists.
+
 ## Previewing locally (optional)
 
 With Docker (the `MSYS_NO_PATHCONV`/`cygpath` form is for Windows Git

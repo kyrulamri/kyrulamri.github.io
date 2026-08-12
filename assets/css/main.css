@@ -5,6 +5,8 @@
 
 /* ---------- Design tokens ---------- */
 :root {
+  color-scheme: light dark;
+
   /* Brand palette (verbatim from brand-guidelines SKILL.md) */
   --dark: #141413;          /* primary text + dark backgrounds */
   --light: #faf9f5;         /* light backgrounds + text on dark */
@@ -22,6 +24,11 @@
   --border: #dcd9cd;            /* hairline borders on the cream canvas */
   --focus: var(--accent-orange);
   --accent-ink: #b04e2f;        /* AA-compliant accent for TEXT (brand Orange #d97757 is for fills) */
+  --header-bg: rgba(250, 249, 245, 0.85); /* sticky header scrim */
+  --hover-surface: var(--light-gray);     /* button hover fill */
+  --accent-underline: rgba(176, 78, 47, 0.4); /* prose link underline tint */
+  --inverse-bg: var(--dark);              /* skip-link (inverse of canvas) */
+  --inverse-fg: var(--light);
 
   /* Typography (brand-guidelines: Poppins headings / Lora body) */
   --font-heading: "Poppins", Arial, sans-serif;
@@ -56,6 +63,7 @@ body {
   color: var(--text);
   background: var(--canvas);
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s var(--ease), color 0.3s var(--ease);
 }
 
 h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height: 1.15; margin: 0; }
@@ -82,8 +90,8 @@ img { max-width: 100%; display: block; }
   left: 1rem;
   z-index: 100;
   padding: 0.75rem 1.25rem;
-  background: var(--dark);
-  color: var(--light);
+  background: var(--inverse-bg);
+  color: var(--inverse-fg);
   border-radius: var(--radius-sm);
   text-decoration: none;
   font-family: var(--font-heading);
@@ -110,14 +118,14 @@ img { max-width: 100%; display: block; }
 .btn-primary { background: var(--accent-orange); color: var(--dark); box-shadow: var(--shadow-sm); }
 .btn-primary:hover { box-shadow: var(--shadow-md); }
 .btn-ghost { background: transparent; color: var(--text); border: 1.5px solid var(--border); }
-.btn-ghost:hover { background: var(--light-gray); border-color: transparent; }
+.btn-ghost:hover { background: var(--hover-surface); border-color: transparent; }
 
 /* ---------- Header & nav ---------- */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(250, 249, 245, 0.85);
+  background: var(--header-bg);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
@@ -208,7 +216,7 @@ img { max-width: 100%; display: block; }
 /* ---------- Prose (rendered Markdown) ---------- */
 .prose { max-width: 40rem; margin-top: 2rem; }
 .prose p + p { margin-top: 1.1rem; }
-.prose a { color: var(--accent-ink); text-decoration: underline; text-decoration-color: rgba(176, 78, 47, 0.4); text-underline-offset: 3px; }
+.prose a { color: var(--accent-ink); text-decoration: underline; text-decoration-color: var(--accent-underline); text-underline-offset: 3px; }
 .prose a:hover { text-decoration-color: var(--accent-ink); }
 .prose strong { font-weight: 600; }
 
@@ -271,4 +279,22 @@ img { max-width: 100%; display: block; }
   .hero > * { animation: none; }
   .reveal { opacity: 1; transform: none; transition: none; }
   .btn:hover, .project-card:hover { transform: none; }
+}
+
+/* ---------- Dark mode (automatic, follows the OS) ---------- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --canvas: var(--dark);
+    --text: var(--light);
+    --text-muted: var(--mid-gray);
+    --surface: #1e1d1c; /* cards lifted just off the dark canvas */
+    --border: rgba(176, 174, 165, 0.22);
+    --header-bg: rgba(20, 20, 19, 0.85);
+    --hover-surface: rgba(176, 174, 165, 0.12);
+    --accent-ink: var(--accent-orange); /* brand orange passes AA on dark (5.9:1) */
+    --accent-underline: rgba(217, 119, 87, 0.45);
+    --inverse-bg: var(--light);
+    --inverse-fg: var(--dark);
+  }
 }
