@@ -193,3 +193,21 @@ img { max-width: 100%; display: block; }
   .nav-menu a { display: block; padding: 0.9rem 0; font-size: 1rem; }
   .nav-menu li + li { border-top: 1px solid var(--border); }
 }
+
+/* ---------- Sections ---------- */
+.section { padding-block: var(--section-space); border-top: 1px solid var(--border); }
+.section-title {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  letter-spacing: -0.02em;
+}
+.section-title::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+
+/* ---------- Prose (rendered Markdown) ---------- */
+.prose { max-width: 40rem; margin-top: 2rem; }
+.prose p + p { margin-top: 1.1rem; }
+.prose a { color: var(--accent-ink); text-decoration: underline; text-decoration-color: rgba(176, 78, 47, 0.4); text-underline-offset: 3px; }
+.prose a:hover { text-decoration-color: var(--accent-ink); }
+.prose strong { font-weight: 600; }
