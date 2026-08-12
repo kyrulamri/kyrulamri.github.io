@@ -1,0 +1,23 @@
+# ── EDIT ME from the GitHub web UI ─────────────────────────────
+# This file controls the site's identity, hero, about, and contact.
+# See README.md for how to edit safely.
+
+name: kyrulamri
+tagline: "Software and design with an Anthropic-inspired aesthetic."
+about: |
+  I'm **kyrulamri** — a developer who cares about clean design and
+  durable software. This page follows [Anthropic's brand
+  guidelines](https://github.com/anthropics/skills/tree/main/skills/brand-guidelines):
+  warm neutrals, one restrained accent, and type that reads like a
+  book.
+
+  *Replace this paragraph with a short description of what you do,
+  what you're building, or what you care about. Plain Markdown works
+  here — links, bold, and lists are all fine.*
+socials:
+  - label: GitHub
+    url: "https://github.com/kyrulamri"
+  - label: LinkedIn
+    url: "https://www.linkedin.com/in/your-handle"
+  - label: Email
+    url: "mailto:you@example.com"
